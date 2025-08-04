@@ -1,0 +1,115 @@
+🎓 Internship Certificate Generation System
+
+This project allows a startup or training platform to manage the internship lifecycle:
+
+1.	Student Application
+2.	Admin Task Assignment & Offer Letter Generation
+3.	Student Task Submission
+4.	Admin Verification & Certificate Generation
+
+🛠 Tech Stack:
+
+	Backend: PHP
+	Frontend: HTML + Bootstrap
+	Database: MySQL
+	PDF Generation: FPDF library
+	Server: XAMPP (Apache + MySQL)
+
+🚀 How It Works:
+
+👩‍🎓 1. Student Applies for Internship:
+
+	URL: http://localhost/CertificateSystem/apply.php
+	Form collects:
+	Full Name
+	Email
+	College Name
+	Course / Domain
+	Phone number
+Data is stored in internship_applications table in the database.
+
+👨‍💼 2. Admin Dashboard:
+
+	URL: http://localhost/CertificateSystem/admin/dashboard.php
+	Admin can:
+	    View all student applications
+	    Assign tasks
+	    Generate & download the Offer Letter PDF
+	Offer Letter is saved in: offers/offer_letter_{id}.pdf
+
+Offer Letter Details Include:
+
+	Student Name
+	Course/Domain
+	Internship Start & End Date
+	Assigned Task
+	Unique ID (e.g., CS24KE001)
+
+📤 3. Student Submits Completed Task:
+
+	URL: http://localhost/CertificateSystem/submit-task.php
+	Student submits:
+
+	Full Name
+	College Name
+	Course Name
+	GitHub Project Link
+	LinkedIn Post Link (where offer letter is posted)
+	Offer Letter ID
+	Task Link
+This submission is stored in task_submissions table.
+
+✅ 4. Admin Verifies & Sends Completion Certificate:
+
+	URL: http://localhost/CertificateSystem/generate-certificate.php
+    Admin enters:
+	    Student Name
+	    Certificate ID
+	    Internship Start Date
+	    Internship End Date
+	    Domain / Course Name
+
+Certificate is generated and saved to:
+
+/certificates/certificate_{id}.pdf
+
+FPDF is used to format the certificate with background image and text.
+
+🔧 How to Run This Project:
+
+1. Requirements:
+
+	XAMPP (Apache + MySQL)
+	PHP 7+
+	MySQL
+	FPDF Library (already included)
+
+2. Steps to Run:
+
+	🔥 Start Apache and MySQL using XAMPP.
+	🗂 Place CertificateSystem/ in:
+            C:\xampp\htdocs\
+	🛢 Import Database:
+	Open phpMyAdmin
+	Create database: internship_db
+    	Import SQL file (if provided) or create the following tables manually:
+	internship_applications
+	task_submissions
+
+4.	🌐 Open the site in browser:
+
+Student Apply:  	            http://localhost/CertificateSystem/apply.php
+Admin Dashboard:	            http://localhost/CertificateSystem/admin/dashboard.php
+Student Task Submit:	        http://localhost/CertificateSystem/submit-task.php
+Admin Generate Certificate: 	http://localhost/CertificateSystem/generate-certificate.php
+
+📸 Sample Screenshots:
+
+You can add these:
+    Student Apply Form
+	Admin Dashboard with student list
+	Task Submission form
+	Certificate PDF output
+
+
+
