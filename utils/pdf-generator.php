@@ -4,11 +4,11 @@ require_once('fpdf/fpdf.php');
 class PDFWithBackground extends FPDF {
     function Header() {
         // Background image - A4 size
-        $this->Image('../assets/certificate-bg.jpg', 0, 0, 210, 297);
+        $this->Image('../assets/certificate-bg.JPG', 0, 0, 210, 297);
     }
 }
 
-function generateOfferLetterPDF($name, $course, $date, $id, $savePath) {
+function generateOfferLetterPDF($name, $course, $date, $id, $savePath, $duration, $startDate, $endDate) {
     $pdf = new PDFWithBackground();
     $pdf->AddPage();
 
@@ -27,9 +27,9 @@ function generateOfferLetterPDF($name, $course, $date, $id, $savePath) {
     $pdf->Ln(5);
 
     $body = "Dear $name,\n\n".
-        "We would like to congratulate you on being selected for the \"$course\" virtual internship position with \"CodSoft\". ".
-        "We at CodSoft are excited that you will join our team.\n\n".
-        "The duration of the internship will be of 4 weeks, starting from 10 December 2024 to 10 January 2025. ".
+        "We would like to congratulate you on being selected for the \"$course\" virtual internship position with \"Training Trains\". ".
+        "We at Training Trains are excited that you will join our team.\n\n".
+        "The duration of the internship will be of $duration weeks, starting from $startDate to $endDate. ".
         "The internship is an educational opportunity for you; hence the primary focus is on learning and developing new skills ".
         "and gaining hands-on knowledge. We believe that you will perform all your tasks/projects.\n\n".
         "As an intern, we expect you to perform all assigned tasks to the best of your ability and follow any lawful and reasonable instructions provided to you.\n\n".

@@ -20,7 +20,8 @@ $course = strtoupper($student['domain']);
 $date = "10/12/2024";
 $startDate = "10 December 2024";
 $endDate = "10 January 2025";
-$company = "CodSoft";
+$durationWeeks = 4;
+$company = "Training Trains";
 $pdfFilename = "offer_letter_$id.pdf";
 $pdfPath = "../offers/" . $pdfFilename;
 $offerId = "CS24NY$id";
@@ -39,7 +40,7 @@ $name
 
 We would like to congratulate you on being selected for the \"$course\" virtual internship position with \"$company\". We at $company are excited that you will join our team.
 
-The duration of the internship will be of 4 weeks, starting from $startDate to $endDate. The internship is an educational opportunity for you hence the primary focus is on learning and developing new skills and gaining hands-on knowledge. We believe that you will perform all your tasks/projects.
+The duration of the internship will be of $durationWeeks weeks, starting from $startDate to $endDate. The internship is an educational opportunity for you hence the primary focus is on learning and developing new skills and gaining hands-on knowledge. We believe that you will perform all your tasks/projects.
 
 As an intern, we expect you to perform all assigned tasks to the best of your ability and follow any lawful and reasonable instructions provided to you.
 
@@ -52,8 +53,17 @@ Best of Luck!
 Thank You!
 ";
 
-// ✅ Call function to generate PDF with all 5 arguments
-generateOfferLetterPDF($name, $content, $offerId, $pdfPath, "../assets/certificate-bg.jpg");
+// ✅ Call function with all 8 required arguments
+generateOfferLetterPDF(
+    $name,
+    $content,
+    $offerId,
+    $pdfPath,
+    "../assets/certificate-bg.JPG",
+    $startDate,
+    $endDate,
+    $durationWeeks
+);
 
 // Done
 echo "<script>alert('✅ Offer letter generated with background!'); window.location.href='dashboard.php';</script>";
